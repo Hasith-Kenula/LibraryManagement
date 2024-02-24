@@ -1,0 +1,488 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+   <!--#region close button-->
+    <Style x:Key="Titlebar_CloseButton" TargetType="Button">
+        
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="30"/>
+       
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+
+                    <Border CornerRadius="0 10 0 0" Background="Transparent" BorderThickness="0" x:Name="btn_border" Margin="0" Padding="0">
+                        <Grid>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Path x:Name="path" Data="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                                Stretch="Fill" Width="14" Height="14" Fill="Black" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="btn_border" Value="red"/>
+                            <Setter Property="Fill" TargetName="path" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+   <!--#region Minimize button-->
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+    <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+    <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+    
+    <Style x:Key="Titlebar_MinimizeButton" TargetType="Button">
+        
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="btn_border" Margin="0" Padding="0" Width="40" Height="30" Background="Transparent">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="Background" TargetName="btn_border" Value="#C3C3C3"/>
+                            
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+   <!--#region Maximize button-->
+    <Style x:Key="Titlebar_MaximizeButton" TargetType="Button">
+
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="30"/>
+
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="btn_border" Margin="0" Padding="0" Background="Transparent">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="Background" TargetName="btn_border" Value="#C3C3C3"/>
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region LOG IN BUTTON-->
+    <Style x:Key="loginButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource NavigationPanelBackground}"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="center"
+                                          HorizontalAlignment="Center"/>
+                            <Label Name="content"
+                                   Content="{TemplateBinding Content}" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   Foreground="White"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" TargetName="content" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource NavigationPanelBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+    <!--#region -->
+    <!--#region Update Member button-->
+    <Style x:Key="UpdateMemberButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource NavigationPanelBackground}"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="center"
+                                          HorizontalAlignment="Center"/>
+                            <Label Name="content"
+                                   Content="{TemplateBinding Content}" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   Foreground="White"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" TargetName="content" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource NavigationPanelBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region Add Member Button-->
+    <Style x:Key="AddMemberButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource NavigationPanelBackground}"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="center"
+                                          HorizontalAlignment="Center"/>
+                            <Label Name="content"
+                                   Content="ADD" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   Foreground="White"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" TargetName="content" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource NavigationPanelBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region AddBookButton Button-->
+    <Style x:Key="AddBookButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource NavigationPanelBackground}"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="center"
+                                          HorizontalAlignment="Center"/>
+                            <Label Name="content"
+                                   Content="{TemplateBinding Content}" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   Foreground="White"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" TargetName="content" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource NavigationPanelBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region DeleteMemberButton-->
+    <Style x:Key="DeleteMemberButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource NavigationPanelBackground}"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="center"
+                                          HorizontalAlignment="Center"/>
+                            <Path x:Name="DeleteIcon" Data="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"   
+                              Stretch="Fill" Width="20" Height="20" Fill="White"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Fill" TargetName="DeleteIcon" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="ToolTip">
+                                <Setter.Value>
+                                    <ToolTip Content="Delete"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region Update Book Button-->
+    <Style x:Key="UpdateBookButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource NavigationPanelBackground}"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="center"
+                                          HorizontalAlignment="Center"/>
+                            <Label Name="content"
+                                   Content="{TemplateBinding Content}" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   Foreground="White"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" TargetName="content" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource NavigationPanelBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region Delete Book Button-->
+    <Path x:Key="DeleteIcon" Data="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"   
+                              Stretch="Fill" Width="20" Height="20" Fill="White"/>
+    <Style x:Key="DeleteBookButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource NavigationPanelBackground}"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="center"
+                                          HorizontalAlignment="Center"/>
+                            <Path Name="DeleteIcon" Data="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"   
+                              Stretch="Fill" Width="20" Height="20" Fill="White"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Fill" TargetName="DeleteIcon" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="ToolTip">
+                                <Setter.Value>
+                                    <ToolTip Content="Delete"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->  
+    <!--#region Reserve Book Button-->
+    <Style x:Key="ReserveBookButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource NavigationPanelBackground}"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="center"
+                                          HorizontalAlignment="Center"/>
+                            <Label Name="content"
+                                   Content="{TemplateBinding Content}" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   Foreground="White"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" TargetName="content" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource NavigationPanelBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region Return Book Button-->
+    <Style x:Key="ReturnBookButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource NavigationPanelBackground}"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="center"
+                                          HorizontalAlignment="Center"/>
+                            <Label Name="content"
+                                   Content="{TemplateBinding Content}" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   Foreground="White"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" TargetName="content" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource NavigationPanelBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region Edit Book Button-->
+    <Style x:Key="EditBookButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource NavigationPanelBackground}"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="1" 
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="center"
+                                          HorizontalAlignment="Center"/>
+                            <Label Name="content"
+                                   Content="{TemplateBinding Content}" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   Foreground="White"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" TargetName="content" Value="{DynamicResource NavigationPanelBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource NavigationPanelBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+</ResourceDictionary>

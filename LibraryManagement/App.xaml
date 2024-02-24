@@ -1,0 +1,21 @@
+﻿<Application x:Class="LibraryManagement.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LibraryManagement"
+             StartupUri="LoginWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/colors.xaml"/>
+                <ResourceDictionary Source="Themes/Button.xaml"/>
+                <ResourceDictionary Source="Colors/colors.xaml"/>
+                <ResourceDictionary Source="Themes/textbox.xaml"/>
+                <ResourceDictionary Source="Themes/border.xaml"/>
+                <ResourceDictionary Source="Themes/RadioButton.xaml"/>
+                <ResourceDictionary Source="Themes/DataGrid.xaml"/>
+                <ResourceDictionary Source="Themes/ToggleButton.xaml"/>
+                <ResourceDictionary Source="Path/Path.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

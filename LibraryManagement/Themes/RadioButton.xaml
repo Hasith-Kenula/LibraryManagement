@@ -1,0 +1,273 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fa="http://schemas.fontawesome.com/icons/"
+                    xmlns:awsome ="http://schemas.fontawesome.io/icons/">
+
+    <!--#region Member-->
+    <Style x:Key="Dashboard ButtonMember" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Name="border" CornerRadius="15" Padding="10 0 0 0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <awsome:ImageAwesome Name="icon" 
+                                                 Icon="Users" 
+                                                 Width="20" 
+                                                 Height="20" 
+                                                 Foreground="{StaticResource NavItemColor}"/>
+
+                            <Label Name="label" 
+                                   Grid.Column="1" 
+                                   Content="{TemplateBinding Content}"
+                                   Foreground="{StaticResource NavItemColor}"
+                                   VerticalAlignment="Center"
+                                   />
+
+
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" TargetName="icon" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                            
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Foreground" TargetName="icon" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region Book-->
+    <Style x:Key="Dashboard ButtonBook" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Name="border" CornerRadius="15" Padding="10 0 0 0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <awsome:ImageAwesome Name="icon" 
+                                                 Icon="Book" 
+                                                 Width="20" 
+                                                 Foreground="{StaticResource NavItemColor}" Height="20"/>
+
+                            <Label Name="label" 
+                                   Grid.Column="1" 
+                                   Content="{TemplateBinding Content}"
+                                   Foreground="{StaticResource NavItemColor}"
+                                   VerticalAlignment="Center"
+                                   />
+
+
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" TargetName="icon" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Foreground" TargetName="icon" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region Borrowing-->
+    <Style x:Key="Dashboard ButtonBorrowing" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Name="border" CornerRadius="15" Padding="10 0 0 0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <awsome:ImageAwesome Name="icon" 
+                                                 Icon="BookmarkOutline" 
+                                                 Width="20" Height="20"
+                                                 Foreground="{StaticResource NavItemColor}"/>
+
+                            <Label Name="label" 
+                                   Grid.Column="1" 
+                                   Content="{TemplateBinding Content}"
+                                   Foreground="{StaticResource NavItemColor}"
+                                   VerticalAlignment="Center"
+                                   />
+
+
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" TargetName="icon" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Foreground" TargetName="icon" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region Report-->
+    <Style x:Key="Dashboard ButtonReport" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border x:Name="border" CornerRadius="15" Padding="10 0 0 0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Path Name="path" Data="M304 240V16.6c0-9 7-16.6 16-16.6C443.7 0 544 100.3 544 224c0 9-7.6 16-16.6 16H304zM32 272C32 150.7 122.1 50.3 239 34.3c9.2-1.3 17 6.1 17 15.4V288L412.5 444.5c6.7 6.7 6.2 17.7-1.5 23.1C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zm526.4 16c9.3 0 16.6 7.8 15.4 17c-7.7 55.9-34.6 105.6-73.9 142.3c-6 5.6-15.4 5.2-21.2-.7L320 288H558.4z"
+                                  Stretch="Fill" Width="20" Height="20" Fill="White"/>
+
+                            <Label Name="label" 
+                                   Grid.Column="1" 
+                                   Content="{TemplateBinding Content}"
+                                   Foreground="{StaticResource NavItemColor}"
+                                   VerticalAlignment="Center"
+                                   />
+
+
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="path" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Fill" TargetName="path" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region Return-->
+    <Style x:Key="Dashboard ButtonReturn" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border x:Name="border" CornerRadius="15" Padding="10 0 0 0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Path Name="path" Data="M32 96l320 0V32c0-12.9 7.8-24.6 19.8-29.6s25.7-2.2 34.9 6.9l96 96c6 6 9.4 14.1 9.4 22.6s-3.4 16.6-9.4 22.6l-96 96c-9.2 9.2-22.9 11.9-34.9 6.9s-19.8-16.6-19.8-29.6V160L32 160c-17.7 0-32-14.3-32-32s14.3-32 32-32zM480 352c17.7 0 32 14.3 32 32s-14.3 32-32 32H160v64c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-96-96c-6-6-9.4-14.1-9.4-22.6s3.4-16.6 9.4-22.6l96-96c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 64H480z"
+                                    Stretch="Fill" Width="20" Height="20" Fill="White"/>
+
+                            <Label Name="label" 
+                                   Grid.Column="1" 
+                                   Content="{TemplateBinding Content}"
+                                   Foreground="{StaticResource NavItemColor}"
+                                   VerticalAlignment="Center"
+                                   />
+
+
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="path" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Fill" TargetName="path" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region Account-->
+    <Style x:Key="Dashboard ButtonAccount" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border x:Name="border" CornerRadius="15" Padding="10 0 0 0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Path Name="path" Data="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"
+                                  Stretch="Fill" Width="25" Height="20" Fill="White"/>
+
+                            <Label Name="label" 
+                                   Grid.Column="1" 
+                                   Content="{TemplateBinding Content}"
+                                   Foreground="{StaticResource NavItemColor}"
+                                   VerticalAlignment="Center"
+                                   />
+
+
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="path" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Fill" TargetName="path" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Foreground" TargetName="label" Value="{StaticResource NavigationPanelBackground}"/>
+                            <Setter Property="Background" TargetName="border" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+</ResourceDictionary>

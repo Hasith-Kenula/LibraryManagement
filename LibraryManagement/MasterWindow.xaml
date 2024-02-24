@@ -1,0 +1,87 @@
+﻿<Window x:Class="LibraryManagement.MasterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryManagement"  
+        mc:Ignorable="d"
+        Title="MasterWindow" 
+        Height="660" 
+        Width="910"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="CanResizeWithGrip" 
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None" WindowState="Normal">
+    <Border Style="{StaticResource MasterBorder}" >
+        <Border CornerRadius="10" Background="White">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border x:Name="Title" Grid.Row="0" Background="{StaticResource Title_color}"  CornerRadius="10 10 0 0" MouseLeftButtonDown="Title_MouseLeftButtonDown">
+                    <Grid>
+                        <Button Name="btn_close" 
+                            Width="40" 
+                            Height="30" 
+                            Style="{StaticResource Titlebar_CloseButton}" 
+                            HorizontalAlignment="Right" 
+                            FontSize="20"
+                            Padding="0"
+                            Click="btn_close_Click"/>
+
+                        <Button Name="btn_maximize" 
+                            Width="40" Height="30" 
+                            Style="{StaticResource Titlebar_MaximizeButton}" 
+                            Content="{StaticResource MaximizeIcon}"
+                            HorizontalAlignment="Right" 
+                            Margin="0,0,40,0"
+                            Padding="0"
+                            Click="btn_maximize_Click"/>
+                        <Button Name="btn_minimize" 
+                            Width="40" Height="30" 
+                            Style="{StaticResource Titlebar_MinimizeButton}" 
+                            Content="{StaticResource MinimizeIcon}" 
+                            FontSize="20" 
+                            HorizontalAlignment="Right" 
+                            Margin="0,0,80,0"
+                            Padding="0"
+                            Click="btn_minimize_Click"/>
+                    </Grid>
+                </Border>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="DashBoard" CornerRadius="15" Background="{StaticResource NavigationPanelBackground}" Margin="10 10 5 10">
+
+                        <StackPanel Margin="4 10">
+                            <RadioButton x:Name="Radio_MemberManagement" Margin="0 8" Height="35" Content="Members" Style="{StaticResource Dashboard ButtonMember}" Checked="Radio_MemberManagement_Checked" />
+                            <RadioButton x:Name="Radio_BookManagement" Margin="0 8" Height="35" Content="Books" Style="{StaticResource Dashboard ButtonBook}" Checked="Radio_BookManagement_Checked"/>
+                            <RadioButton x:Name="Radio_BorrowingManagement" Margin="0 8" Height="35" Content="Borrowing" Style="{StaticResource Dashboard ButtonBorrowing}" Checked="Radio_BorrowingManagement_Checked"/>
+                            <RadioButton x:Name="Radio_Return" Margin="0 8" Height="35" Content="Return" Style="{StaticResource Dashboard ButtonReturn}" Checked="Radio_Return_Checked"/>
+                            <RadioButton x:Name="Radio_Report" Margin="0 8" Height="35" Content="Report" Style="{StaticResource Dashboard ButtonReport}" Checked="Radio_Report_Checked"/>
+                            
+                        
+                        </StackPanel>
+
+                    </Border>
+                    <Grid Grid.Column="1" Height="auto" Width="auto">
+                        <Border x:Name="ContentArea" 
+                                Grid.Row="1" 
+                                Background="{StaticResource Title_color}" 
+                                CornerRadius="15" 
+                                Margin="5 10 10 10">
+                            <UserControl Name="MainContent" Margin="5"/>
+                        </Border>
+                    </Grid>
+
+                </Grid>
+            </Grid>
+
+        </Border>
+    </Border>
+</Window>

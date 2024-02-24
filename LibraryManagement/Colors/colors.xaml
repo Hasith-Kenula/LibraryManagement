@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+
+    <!--#region solid colors-->
+    <SolidColorBrush x:Key="btn_close_mouseover" Color="#C42B1C"/>
+    <SolidColorBrush x:Key="Title_color" Color="#F6F3F3"/>
+    <SolidColorBrush x:Key="btn_login_normal_background" Color="#1982C5"/>
+    <SolidColorBrush x:Key="btn_login_mouseOver_background" Color="#46D8F9"/>
+    <!--#endregion-->
+    <!--#region gradiant colors-->
+    <LinearGradientBrush x:Key="textboxBorder" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#A3FFDF" Offset="0"/>
+        <GradientStop Color="#81FFFC" Offset="0.75"/>
+        <GradientStop Color="#65F0FF" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="NavigationPanelBackground" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#fb7154" Offset="0.001"/>
+        <GradientStop Color="#fb6161" Offset="1"/>
+        <GradientStop/>
+    </LinearGradientBrush>
+    <!--#endregion-->
+    <!--#region NavigationPanelColors-->
+    <SolidColorBrush x:Key="NavItemColor" Color="White"/>
+    <!--#endregion-->
+</ResourceDictionary>

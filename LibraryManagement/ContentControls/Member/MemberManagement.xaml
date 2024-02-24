@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="LibraryManagement.ContentControls.MemberManagement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="660" d:DesignWidth="710">
+
+
+    <Border>
+        <Grid Height="auto" Width="auto">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" 
+                      ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
+                      CellStyle="{DynamicResource DataGridCellStyle1}" 
+                      Style="{DynamicResource DataGridStyle1}"
+                      x:Name="MemberDataGrid" 
+                      IsReadOnly="True"
+                      Grid.Row="1">
+            </DataGrid>
+            <Border Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="SearchBox"
+                                 Style="{StaticResource SearchBox}" 
+                                 Padding="23 0 0 0"
+                                 Width="250" Height="35" 
+                                 HorizontalAlignment="Left"
+                                 Margin="8 0 0 0"
+                                 Tag="Search .  .  ." 
+                                 TextChanged="SearchBox_TextChanged"/>
+                    </StackPanel>
+                    <StackPanel Width="165" 
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Right"
+                                Grid.Column="1">
+                        <StackPanel Width="85">
+                            <Label Name="lbl_Edit"
+                                   Content="Edit/Delete Mod" 
+                                   FontSize="10"
+                                   HorizontalAlignment="Center"
+                                   Foreground="Black"/>
+                            <CheckBox Name="cb_edit" 
+                                      Style="{StaticResource EditToggleButton}"
+                                      HorizontalAlignment="Center"
+                                      Checked="cb_edit_Checked" Unchecked="cb_edit_Unchecked"/>
+                        </StackPanel>
+                        <StackPanel Width="80">
+                            <Label Name="lbl_Add"
+                                   Content="Add Mod"
+                                   FontSize="10"
+                                   HorizontalAlignment="Center"/>
+                            <CheckBox Name="cb_Add"
+                                      Style="{StaticResource EditToggleButton}"
+                                      Checked="cb_Add_Checked" Unchecked="cb_Add_Unchecked"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+            <Canvas Grid.Row="2">
+                <StackPanel Name="Member_Edit_Panel" Orientation="Horizontal" Visibility="Hidden" VerticalAlignment="Center" Canvas.Top="0">
+                    <TextBox Name ="txt_editId" Width="100" Style="{StaticResource textBoxEdit}" Tag="ID" TextChanged="txt_editId_TextChanged" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBox Name ="txt_editName" Width="100" Style="{StaticResource textBoxEdit}" Margin="20 0" Tag="Name"/>
+                    <TextBox Name ="txt_editEmail" Width="150" Style="{StaticResource textBoxEdit}" Tag="Email"/>
+                    <TextBox Name ="txt_editContactNo" Width="100" Style="{StaticResource textBoxEdit}" Margin="20 0 8 0" Tag="Contact No"/>
+                    <Button Name="btn_save" Content="Update" Style="{DynamicResource UpdateMemberButton}" Click="btn_save_Click"/>
+                    <Button Name="btn_delete" Margin="10 0 0 0" Width="40" Style="{DynamicResource DeleteMemberButton}" Click="btn_delete_Click"/>
+                </StackPanel>
+                <StackPanel Name="Member_Add_Panel" Orientation="Horizontal" Visibility="Hidden" VerticalAlignment="Center" Canvas.Top="0">
+                    <TextBox Name="txt_AddName" Width="100" Style="{StaticResource textBoxEdit}" Tag="Name"/>
+                    <TextBox Name="txt_AddEmail" Width="150" Style="{StaticResource textBoxEdit}" Margin="20 0" Tag="Email"/>
+                    <TextBox Name="txt_AddContactNo" Width="100" Style="{StaticResource textBoxEdit}" Margin="0 0 20 0" Tag="Contact No"/>
+                    <Button Name="Add_Member" Style="{StaticResource AddMemberButton}" Click="Add_Member_Click"/>
+                </StackPanel>
+            </Canvas>
+        </Grid>
+    </Border>
+</UserControl>

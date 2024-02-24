@@ -1,0 +1,8 @@
+D:\BIT\LibraryManagement\database\bin\Debug\LibraryManagementSystem.mdf
+D:\BIT\LibraryManagement\database\bin\Debug\LibraryManagementSystem_log.ldf
+D:\BIT\LibraryManagement\database\bin\Debug\database.dll
+D:\BIT\LibraryManagement\database\bin\Debug\database.pdb
+D:\BIT\LibraryManagement\database\obj\Debug\database.csproj.AssemblyReference.cache
+D:\BIT\LibraryManagement\database\obj\Debug\database.csproj.CoreCompileInputs.cache
+D:\BIT\LibraryManagement\database\obj\Debug\database.dll
+D:\BIT\LibraryManagement\database\obj\Debug\database.pdb
